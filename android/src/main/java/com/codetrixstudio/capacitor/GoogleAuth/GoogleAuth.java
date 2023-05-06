@@ -27,6 +27,7 @@ import com.google.android.gms.tasks.Task;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.*;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -67,8 +68,11 @@ public class GoogleAuth extends Plugin {
       googleSignInBuilder.requestServerAuthCode(clientId, true);
     }
 
-    String[] scopeArray = getConfig().getArray("scopes", new String[] {});
+    System.out.println("Working");
+    String[] scopeArray = getConfig().getArray("scopes", new String[] {}) || ;
     Scope[] scopes = new Scope[scopeArray.length - 1];
+
+    System.out.println("Working - 2");
     Scope firstScope = new Scope(scopeArray[0]);
     for (int i = 1; i < scopeArray.length; i++) {
       scopes[i - 1] = new Scope(scopeArray[i]);
