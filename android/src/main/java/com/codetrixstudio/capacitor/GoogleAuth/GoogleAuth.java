@@ -69,7 +69,7 @@ public class GoogleAuth extends Plugin {
     }
 
     System.out.println("Working");
-    String[] scopeArray = getConfig().getArray("scopes", new String[] {}) || ;
+    String[] scopeArray = getConfig().getArray("scopes", new String[] {});
     Scope[] scopes = new Scope[scopeArray.length - 1];
 
     System.out.println("Working - 2");
